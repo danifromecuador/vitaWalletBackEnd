@@ -40,5 +40,5 @@ group :development, :test do
   gem 'rubocop-rails-omakase', require: false
 end
 
-gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'faraday'
+gem 'rubocop', '>= 1.0', '< 2.0'
