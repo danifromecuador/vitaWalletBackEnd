@@ -26,6 +26,8 @@ class TransactionsController < ApplicationController
       btc_usd_exchange_rate: @current_btc_price
     )
     if @transaction.save
+      update_user_balance(@transaction.coin_to_send, @transaction.amount_to_send_in_cents_or_sats,
+                          @transaction.amount_to_receive_in_cents_or_sats)
       render json: @transaction, status: :created
     else
       render json: @transaction.errors, status: :unprocessable_entity
@@ -47,5 +49,21 @@ class TransactionsController < ApplicationController
     return (amount_to_send / exchange_rate) * 1_000_000 if coin_to_send == 'usd'
 
     (amount_to_send * exchange_rate) / 1_000_000
+  end
+
+  def update_user_balance(coin_to_send, amount_to_send, amount_to_receive)
+    if coin_to_send == 'usd'
+      usd_balance_in_cents = @user.usd_balance_in_cents - amount_to_send
+      btc_balance_in_sats = @user.btc_balance_in_sats + amount_to_receive
+    end
+    if coin_to_send == 'btc'
+      usd_balance_in_cents = @user.usd_balance_in_cents + amount_to_receive
+      btc_balance_in_sats = @user.btc_balance_in_sats - amount_to_send
+    end
+    new_user_params = {
+      usd_balance_in_cents: usd_balance_in_cents,
+      btc_balance_in_sats: btc_balance_in_sats
+    }
+    @user.update(new_user_params)
   end
 end
