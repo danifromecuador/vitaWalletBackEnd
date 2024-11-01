@@ -1,4 +1,4 @@
-class TransactionsController < ApplicationController
+class V1::TransactionsController < ApplicationController
   before_action :set_user
 
   # GET /users/1/transactions
