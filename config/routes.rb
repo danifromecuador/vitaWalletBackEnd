@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
-  resources :users do
-    resources :transactions
+  get "/" => "v1/users#index"
+  namespace :v1 do
+    resources :users do
+      resources :transactions
+    end
   end
-  get "btc_usd_exchange_rate" => "rates#rate"
+  get "v1/btc_usd_exchange_rate" => "v1/rates#rate"
 end
