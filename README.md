@@ -23,7 +23,7 @@
 
 **VitaWallet API** es una API Rest que permite realizar transacciones de compra o venta entre USD y BTC al precio actual del mercado, revisar la tasa de cambio del BTC/USD, consultar todas las transacciones de un usuario y consultar los detalles de una transacción.
 
-Por favor, lee la <a href="https://documenter.getpostman.com/view/31013872/2sAY4vghqp">documentación</a> antes de usar la API.
+Por favor, lea la <a href="https://documenter.getpostman.com/view/31013872/2sAY4vghqp">documentación</a> antes de usar la API.
 
 ## 🛠 Creada Con <a name="built-with"></a>
 
@@ -59,7 +59,7 @@ Por favor, lee la <a href="https://documenter.getpostman.com/view/31013872/2sAY4
 
 
 ## Live Link <a name="live-link"></a>
-<a href="https://vitawalletapi.onrender.com/users">vitawalletapi.onrender.com/users</a>
+<a href="https://vitawalletapi.onrender.com/v1/users">vitawalletapi.onrender.com/v1/users</a>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -124,7 +124,7 @@ Luego de eso el proyecto estará ejecutándose en el servidor local, abra el sig
 
 ## 🤝 Contribuciones <a name="contributing"></a>
 
-Si deseas contribuir, reportar issues o cualquier sugerencia, puedes hacerlo en la [issues page](https://github.com/danifromecuador/vitaWalletBackEnd/issues) de GitHub
+Si desea contribuir, reportar issues o cualquier sugerencia, puede hacerlo en la [issues page](https://github.com/danifromecuador/vitaWalletBackEnd/issues) de GitHub
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
